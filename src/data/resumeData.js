@@ -19,7 +19,7 @@ export const personalInfo = {
     { label: "Relocation Status", value: "Toronto, CA (PR)" },
   ],
   socials: {
-    github: "https://github.com/bit-happy",
+    github: "https://github.com/tekwarts",
     linkedin: "https://linkedin.com",
     email: "mailto:eddie.li.cs@gmail.com",
   }
