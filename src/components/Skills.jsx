@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import { 
   Code2, Sparkles, Server, Cloud, Database, 
-  Network, Search, Award, Coffee, Terminal, 
+  Network, Search, Coffee, Terminal, 
   FileCode, Layout, Palette, Zap, Brain, 
   Link2, Activity, Compass, Cpu, MousePointer, 
   Layers, Globe, Box, GitBranch, Package, 
-  Radio, ShieldCheck, Split, Binary, Braces,
-  Boxes
+  Radio, ShieldCheck, Split, Binary, Braces
 } from 'lucide-react';
 import { skillCategories } from '../data/resumeData';
 
-// Map icon names to Lucide icon components
 const skillIconMap = {
   'coffee': Coffee,
   'terminal': Terminal,
@@ -71,93 +69,91 @@ export default function Skills() {
   }).filter(Boolean);
 
   return (
-    <section id="skills" className="py-16 md:py-24 border-t border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="relative px-4 sm:px-6">
+      <div className="max-w-5xl mx-auto">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 mb-3">
-            <Award className="w-3.5 h-3.5" />
-            Technical Proficiency
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Skills & Technology Matrix
-          </h2>
-          <p className="mt-2 text-base sm:text-lg text-slate-600 dark:text-slate-400">
-            A comprehensive inventory of programming languages, distributed infrastructure, databases, and AI tooling applied across production systems.
-          </p>
-        </div>
-
-        {/* Filter controls */}
-        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-10 p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
-          {/* Category tabs */}
-          <div className="flex flex-wrap items-center gap-1.5">
-            {['All', ...skillCategories.map(c => c.title)].map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                  selectedCategory === cat
-                    ? 'bg-blue-600 text-white shadow-sm'
-                    : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
-                }`}
-              >
-                {cat === 'All' ? 'All Skills' : cat}
-              </button>
-            ))}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 pb-6 border-b border-black/[0.06] dark:border-white/[0.08]">
+          <div>
+            <div className="text-xs uppercase font-semibold tracking-wider text-neutral-400 dark:text-neutral-500 mb-2">
+              Capabilities
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-neutral-950 dark:text-white">
+              Skills & Technologies
+            </h2>
+            <p className="mt-2 text-sm sm:text-base text-neutral-500 dark:text-neutral-400 max-w-xl">
+              Languages, distributed streaming platforms, cloud infra, and vector databases applied across production services.
+            </p>
           </div>
 
-          {/* Search box */}
+          {/* Search */}
           <div className="relative min-w-[220px]">
-            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-400" />
             <input
               type="text"
-              placeholder="Search skill (e.g. Kafka, RAG)..."
+              placeholder="Search skill (e.g. Kafka)..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-9 pr-3 py-1.5 rounded-lg text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full pl-10 pr-4 py-2 rounded-full text-xs liquid-glass-subtle text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-none focus:ring-1 focus:ring-neutral-400 transition-all"
             />
           </div>
         </div>
 
-        {/* Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Apple Segmented Filter Tabs */}
+        <div className="flex items-center gap-1.5 p-1 rounded-full liquid-glass-subtle w-fit mb-8 overflow-x-auto max-w-full">
+          {['All', ...skillCategories.map(c => c.title)].map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSelectedCategory(cat)}
+              className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-200 whitespace-nowrap ${
+                selectedCategory === cat
+                  ? 'bg-neutral-900 text-white dark:bg-white dark:text-neutral-950 shadow-sm'
+                  : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white'
+              }`}
+            >
+              {cat === 'All' ? 'All Skills' : cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Categories Liquid Glass Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredCategories.map((cat) => {
             const CategoryIcon = categoryIcons[cat.title] || Code2;
             return (
               <div
                 key={cat.title}
-                className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+                className="liquid-glass rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:translate-y-[-2px]"
               >
                 <div>
-                  {/* Category Header */}
-                  <div className="flex items-center gap-3 mb-5 border-b border-slate-100 dark:border-slate-800 pb-4">
-                    <div className="p-2.5 rounded-xl bg-blue-50 dark:bg-blue-950/70 text-blue-600 dark:text-blue-400">
-                      <CategoryIcon className="w-5 h-5" />
+                  {/* Category Title */}
+                  <div className="flex items-center gap-3 mb-5 pb-4 border-b border-black/[0.05] dark:border-white/[0.06]">
+                    <div className="p-2 rounded-xl liquid-glass-subtle text-neutral-800 dark:text-neutral-200">
+                      <CategoryIcon className="w-4 h-4" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-base text-slate-900 dark:text-white">
+                      <h3 className="font-semibold text-sm text-neutral-950 dark:text-white tracking-tight">
                         {cat.title}
                       </h3>
-                      <p className="text-xs text-slate-500 dark:text-slate-400">
-                        {cat.skills.length} skills listed
+                      <p className="text-[11px] text-neutral-400 dark:text-neutral-500">
+                        {cat.skills.length} skills
                       </p>
                     </div>
                   </div>
 
-                  {/* Skills with Icons (No YOE) */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {/* Skills Grid: Clean Liquid Glass Pills */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {cat.skills.map((skill) => {
                       const SkillIcon = skillIconMap[skill.icon] || Code2;
                       return (
                         <div
                           key={skill.name}
-                          className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 hover:border-blue-300 dark:hover:border-blue-700 hover:bg-blue-50/40 dark:hover:bg-blue-950/30 transition-all group"
+                          className="liquid-glass-subtle rounded-2xl p-2.5 flex items-center gap-2 hover:bg-white/80 dark:hover:bg-white/10 transition-all duration-150 group"
                         >
-                          <div className="p-1.5 rounded-lg bg-white dark:bg-slate-800 text-blue-600 dark:text-blue-400 border border-slate-200/70 dark:border-slate-700 group-hover:scale-110 transition-transform">
-                            <SkillIcon className="w-4 h-4" />
+                          <div className="p-1 rounded-lg text-neutral-500 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors">
+                            <SkillIcon className="w-3.5 h-3.5" />
                           </div>
-                          <span className="font-medium text-xs sm:text-sm text-slate-800 dark:text-slate-200 truncate">
+                          <span className="text-xs font-medium text-neutral-800 dark:text-neutral-200 truncate">
                             {skill.name}
                           </span>
                         </div>
@@ -172,16 +168,8 @@ export default function Skills() {
         </div>
 
         {filteredCategories.length === 0 && (
-          <div className="p-8 text-center bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800">
-            <p className="text-slate-500 dark:text-slate-400 text-sm">
-              No matching skills found for "{searchTerm}".
-            </p>
-            <button
-              onClick={() => { setSearchTerm(''); setSelectedCategory('All'); }}
-              className="mt-3 px-3 py-1 text-xs font-medium text-blue-600 dark:text-blue-400 underline"
-            >
-              Reset filter
-            </button>
+          <div className="liquid-glass rounded-3xl p-10 text-center text-neutral-500 text-sm">
+            No matching skills found for "{searchTerm}".
           </div>
         )}
 

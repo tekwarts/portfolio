@@ -20,103 +20,95 @@ export default function ArchitectureShowcase() {
   };
 
   return (
-    <section id="architecture" className="py-16 md:py-24 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="architecture" className="relative px-4 sm:px-6">
+      <div className="max-w-5xl mx-auto">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800 dark:bg-indigo-950/80 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 mb-3">
-            <Network className="w-3.5 h-3.5" />
-            System Design & Engineering Depth
+        <div className="mb-10 pb-6 border-b border-black/[0.06] dark:border-white/[0.08]">
+          <div className="text-xs uppercase font-semibold tracking-wider text-neutral-400 dark:text-neutral-500 mb-2">
+            System Design
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Key Architectural Implementations
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-neutral-950 dark:text-white">
+            Architecture Implementations
           </h2>
-          <p className="mt-2 text-base sm:text-lg text-slate-600 dark:text-slate-400">
-            A deeper look into the distributed event pipelines, dual-datastore sync mechanisms, and AI microservices engineered during tenure at Ruiting Tech.
+          <p className="mt-2 text-sm sm:text-base text-neutral-500 dark:text-neutral-400 max-w-xl">
+            Key distributed systems and microservices designed for transaction consistency, high throughput, and sub-second latency.
           </p>
         </div>
 
-        {/* System Tabs */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-8">
+        {/* Apple Segmented Control System Tabs */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5 mb-6">
           {architectureShowcases.map((system, idx) => {
             const isActive = activeTab === idx;
             return (
               <button
                 key={system.title}
                 onClick={() => setActiveTab(idx)}
-                className={`text-left p-4 sm:p-5 rounded-2xl border transition-all ${
+                className={`text-left p-4 sm:p-5 rounded-2xl transition-all duration-200 ${
                   isActive
-                    ? 'bg-blue-50/70 dark:bg-blue-950/40 border-blue-500/80 shadow-md ring-1 ring-blue-500/30'
-                    : 'bg-slate-50 dark:bg-slate-900/60 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
+                    ? 'liquid-glass shadow-md ring-1 ring-black/5 dark:ring-white/10'
+                    : 'liquid-glass-subtle opacity-70 hover:opacity-100'
                 }`}
               >
-                <div className="flex items-center justify-between mb-2">
-                  <span className={`text-xs font-semibold uppercase tracking-wider ${isActive ? 'text-blue-600 dark:text-blue-400' : 'text-slate-400'}`}>
-                    Architecture #{idx + 1}
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-neutral-400 dark:text-neutral-500">
+                    System 0{idx + 1}
                   </span>
-                  <span className={`text-xs px-2 py-0.5 rounded-full font-mono ${isActive ? 'bg-blue-200/60 text-blue-800 dark:bg-blue-900 dark:text-blue-200' : 'bg-slate-200/60 dark:bg-slate-800 text-slate-600 dark:text-slate-400'}`}>
+                  <span className="text-[11px] text-neutral-500 dark:text-neutral-400">
                     {system.badge.split('&')[0]}
                   </span>
                 </div>
-                <h4 className={`text-base font-bold ${isActive ? 'text-slate-900 dark:text-white' : 'text-slate-700 dark:text-slate-300'}`}>
+                <div className="text-sm font-semibold text-neutral-900 dark:text-white tracking-tight">
                   {system.title}
-                </h4>
-                <p className="mt-1 text-xs text-blue-600 dark:text-blue-400 font-medium">
+                </div>
+                <div className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
                   {system.impact}
-                </p>
+                </div>
               </button>
             );
           })}
         </div>
 
-        {/* Selected Architecture Detailed Breakdown */}
-        <div className="p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 bg-gradient-to-br from-slate-50 via-white to-blue-50/20 dark:from-slate-900 dark:via-slate-900/80 dark:to-blue-950/20 shadow-lg">
+        {/* Liquid Glass Main Stage */}
+        <div className="liquid-glass rounded-3xl p-6 sm:p-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
-            {/* Description & Technical Pillars */}
+            {/* Left Column: Architectural Intent */}
             <div className="lg:col-span-6 space-y-6">
               <div>
-                <div className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 mb-3">
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-black/[0.04] dark:bg-white/[0.08] text-neutral-800 dark:text-neutral-200 mb-3">
                   {current.impact}
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                </span>
+                <h3 className="text-2xl font-semibold text-neutral-950 dark:text-white tracking-tight">
                   {current.title}
                 </h3>
-                <p className="mt-2 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed font-normal">
                   {current.description}
                 </p>
               </div>
 
-              {/* Key Implementation Features */}
-              <div className="space-y-3">
-                <h5 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
-                  Engineering Solutions & Design Patterns
-                </h5>
-                <div className="space-y-2.5">
-                  {current.features.map((feat, fIdx) => (
-                    <div key={fIdx} className="flex items-start gap-3 p-3 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 shadow-2xs">
-                      <div className="p-1 rounded-md bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 mt-0.5">
-                        <CheckCircle className="w-3.5 h-3.5" />
-                      </div>
-                      <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 font-medium">
-                        {feat}
-                      </p>
-                    </div>
-                  ))}
+              {/* Engineering Pillars */}
+              <div className="space-y-2.5">
+                <div className="text-xs uppercase font-semibold tracking-wider text-neutral-400 dark:text-neutral-500">
+                  Engineering Solutions
                 </div>
+                {current.features.map((feat, fIdx) => (
+                  <div key={fIdx} className="liquid-glass-subtle p-3 rounded-2xl flex items-start gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-neutral-500 dark:bg-neutral-400 mt-2 flex-shrink-0" />
+                    <p className="text-xs sm:text-sm text-neutral-700 dark:text-neutral-200 font-normal leading-relaxed">
+                      {feat}
+                    </p>
+                  </div>
+                ))}
               </div>
 
-              {/* Tech Stack Chips */}
+              {/* Technologies */}
               <div className="pt-2">
-                <span className="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider block mb-2">
-                  Integrated Technologies
-                </span>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5">
                   {current.tech.map((t) => (
                     <span
                       key={t}
-                      className="px-3 py-1 text-xs font-mono font-medium rounded-lg bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800"
+                      className="px-2.5 py-1 rounded-full text-xs font-mono bg-black/[0.04] dark:bg-white/[0.06] text-neutral-700 dark:text-neutral-300"
                     >
                       {t}
                     </span>
@@ -125,40 +117,38 @@ export default function ArchitectureShowcase() {
               </div>
             </div>
 
-            {/* Visual Flow / Code Implementation Interactive Panel */}
-            <div className="lg:col-span-6 p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-inner">
+            {/* Right Column: Apple-styled Dataflow / Code Inspector */}
+            <div className="lg:col-span-6 liquid-glass-subtle rounded-2xl p-5 border border-black/[0.06] dark:border-white/[0.08]">
               
-              {/* Header with Switcher Tabs */}
-              <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800 mb-4">
-                <div className="flex items-center gap-1.5 p-1 rounded-lg bg-slate-100 dark:bg-slate-800">
+              {/* Segmented Switcher Header */}
+              <div className="flex items-center justify-between pb-3 mb-4 border-b border-black/[0.05] dark:border-white/[0.06]">
+                <div className="flex items-center gap-1 bg-black/[0.04] dark:bg-white/[0.06] p-0.5 rounded-full">
                   <button
                     onClick={() => setViewMode('flow')}
-                    className={`px-3 py-1 text-xs font-medium rounded-md transition-all flex items-center gap-1.5 ${
+                    className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${
                       viewMode === 'flow'
-                        ? 'bg-white dark:bg-slate-700 text-blue-600 dark:text-white shadow-2xs'
-                        : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
+                        ? 'bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white shadow-xs'
+                        : 'text-neutral-500 hover:text-neutral-900 dark:hover:text-white'
                     }`}
                   >
-                    <Cpu className="w-3.5 h-3.5" />
-                    <span>Dataflow</span>
+                    Dataflow
                   </button>
                   <button
                     onClick={() => setViewMode('code')}
-                    className={`px-3 py-1 text-xs font-medium rounded-md transition-all flex items-center gap-1.5 ${
+                    className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${
                       viewMode === 'code'
-                        ? 'bg-white dark:bg-slate-700 text-blue-600 dark:text-white shadow-2xs'
-                        : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
+                        ? 'bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white shadow-xs'
+                        : 'text-neutral-500 hover:text-neutral-900 dark:hover:text-white'
                     }`}
                   >
-                    <Code2 className="w-3.5 h-3.5" />
-                    <span>Implementation Code</span>
+                    Code Pattern
                   </button>
                 </div>
 
                 {viewMode === 'code' && current.codeSnippet && (
                   <button
                     onClick={() => handleCopyCode(current.codeSnippet.code)}
-                    className="inline-flex items-center gap-1 text-xs font-mono text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"
+                    className="inline-flex items-center gap-1 text-xs text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors"
                   >
                     {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
                     <span>{copied ? 'Copied' : 'Copy'}</span>
@@ -166,130 +156,130 @@ export default function ArchitectureShowcase() {
                 )}
               </div>
 
-              {/* View 1: Dataflow Diagram */}
+              {/* Dataflow View */}
               {viewMode === 'flow' && (
                 <div className="space-y-3">
                   {activeTab === 0 && (
-                    <div className="space-y-3 text-xs font-mono">
-                      <div className="p-3.5 rounded-xl bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-900 text-blue-900 dark:text-blue-200">
-                        <div className="font-bold flex items-center justify-between">
-                          <span>1. Reservation & Leasing Producer</span>
-                          <span className="text-[10px] bg-blue-200 dark:bg-blue-800 px-1.5 py-0.5 rounded">Spring Boot</span>
+                    <div className="space-y-2.5 text-xs">
+                      <div className="p-3.5 rounded-xl liquid-glass">
+                        <div className="font-semibold text-neutral-900 dark:text-white flex items-center justify-between">
+                          <span>1. Reservation & Leasing Service</span>
+                          <span className="text-[10px] text-neutral-400 font-mono">Spring Boot</span>
                         </div>
-                        <p className="text-xs mt-1.5 text-slate-600 dark:text-slate-300 font-sans">
-                          Writes reservation business entity to MySQL/Postgres and logs event to Outbox table atomically within one local database transaction.
+                        <p className="text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">
+                          Atomic transaction writing reservation record and Outbox event table simultaneously in PostgreSQL.
                         </p>
                       </div>
 
-                      <div className="flex justify-center text-blue-500">
-                        <ArrowRight className="w-4 h-4 rotate-90" />
+                      <div className="flex justify-center text-neutral-400 dark:text-neutral-600">
+                        <ArrowRight className="w-3.5 h-3.5 rotate-90" />
                       </div>
 
-                      <div className="p-3.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 border border-indigo-200 dark:border-indigo-900 text-indigo-900 dark:text-indigo-200">
-                        <div className="font-bold flex items-center justify-between">
-                          <span>2. Event Bus (Kafka Cluster)</span>
-                          <span className="text-[10px] bg-indigo-200 dark:bg-indigo-800 px-1.5 py-0.5 rounded">Partitioned</span>
+                      <div className="p-3.5 rounded-xl liquid-glass">
+                        <div className="font-semibold text-neutral-900 dark:text-white flex items-center justify-between">
+                          <span>2. Kafka Event Cluster</span>
+                          <span className="text-[10px] text-neutral-400 font-mono">Partitioned Stream</span>
                         </div>
-                        <p className="text-xs mt-1.5 text-slate-600 dark:text-slate-300 font-sans">
-                          Partition key by property ID ensures strict order of state transitions. Exponential retry and DLQ prevent cluster stalls.
+                        <p className="text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">
+                          Keyed partitioning by property ID preserves event ordering. Exponential backoff & DLQ prevent cluster head-of-line blocking.
                         </p>
                       </div>
 
-                      <div className="flex justify-center text-indigo-500">
-                        <ArrowRight className="w-4 h-4 rotate-90" />
+                      <div className="flex justify-center text-neutral-400 dark:text-neutral-600">
+                        <ArrowRight className="w-3.5 h-3.5 rotate-90" />
                       </div>
 
-                      <div className="p-3.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-900 text-emerald-900 dark:text-emerald-200">
-                        <div className="font-bold flex items-center justify-between">
+                      <div className="p-3.5 rounded-xl liquid-glass">
+                        <div className="font-semibold text-neutral-900 dark:text-white flex items-center justify-between">
                           <span>3. Idempotent Consumer Workers</span>
-                          <span className="text-[10px] bg-emerald-200 dark:bg-emerald-800 px-1.5 py-0.5 rounded">+40% Throughput</span>
+                          <span className="text-[10px] text-neutral-400 font-mono">+40% Throughput</span>
                         </div>
-                        <p className="text-xs mt-1.5 text-slate-600 dark:text-slate-300 font-sans">
-                          Parallelized consumer groups update inventory records, notify payment services, and verify idempotency keys via Redis.
+                        <p className="text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">
+                          Parallel consumer pools handle inventory reservation, notifications, and suppress duplicate deliveries with Redis idempotency tokens.
                         </p>
                       </div>
                     </div>
                   )}
 
                   {activeTab === 1 && (
-                    <div className="space-y-3 text-xs font-mono">
-                      <div className="p-3.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-900 text-emerald-900 dark:text-emerald-200">
-                        <div className="font-bold flex items-center justify-between">
-                          <span>1. MongoDB Document Repository</span>
-                          <span className="text-[10px] bg-emerald-200 dark:bg-emerald-800 px-1.5 py-0.5 rounded">Dynamic Schema</span>
+                    <div className="space-y-2.5 text-xs">
+                      <div className="p-3.5 rounded-xl liquid-glass">
+                        <div className="font-semibold text-neutral-900 dark:text-white flex items-center justify-between">
+                          <span>1. MongoDB Listing Repository</span>
+                          <span className="text-[10px] text-neutral-400 font-mono">Polymorphic Docs</span>
                         </div>
-                        <p className="text-xs mt-1.5 text-slate-600 dark:text-slate-300 font-sans">
-                          Handles polymorphic rental listings, pricing rules, and multi-tenant metadata with compound indexes and schema validation.
+                        <p className="text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">
+                          Handles diverse property attributes and rental terms with compound indexing and document schema validation.
                         </p>
                       </div>
 
-                      <div className="flex justify-center text-emerald-500">
-                        <ArrowRight className="w-4 h-4 rotate-90" />
+                      <div className="flex justify-center text-neutral-400 dark:text-neutral-600">
+                        <ArrowRight className="w-3.5 h-3.5 rotate-90" />
                       </div>
 
-                      <div className="p-3.5 rounded-xl bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-900 text-blue-900 dark:text-blue-200">
-                        <div className="font-bold flex items-center justify-between">
-                          <span>2. Kafka Async Stream Sync</span>
-                          <span className="text-[10px] bg-blue-200 dark:bg-blue-800 px-1.5 py-0.5 rounded">Decoupled Sync</span>
+                      <div className="p-3.5 rounded-xl liquid-glass">
+                        <div className="font-semibold text-neutral-900 dark:text-white flex items-center justify-between">
+                          <span>2. Kafka Asynchronous Sync</span>
+                          <span className="text-[10px] text-neutral-400 font-mono">Stream Producer</span>
                         </div>
-                        <p className="text-xs mt-1.5 text-slate-600 dark:text-slate-300 font-sans">
-                          Stream listener captures mutations asynchronously without introducing write latencies to the primary API.
+                        <p className="text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">
+                          Captures property updates asynchronously, shielding primary write endpoints from indexing latency.
                         </p>
                       </div>
 
-                      <div className="flex justify-center text-blue-500">
-                        <ArrowRight className="w-4 h-4 rotate-90" />
+                      <div className="flex justify-center text-neutral-400 dark:text-neutral-600">
+                        <ArrowRight className="w-3.5 h-3.5 rotate-90" />
                       </div>
 
-                      <div className="p-3.5 rounded-xl bg-amber-50 dark:bg-amber-950/50 border border-amber-200 dark:border-amber-900 text-amber-900 dark:text-amber-200">
-                        <div className="font-bold flex items-center justify-between">
+                      <div className="p-3.5 rounded-xl liquid-glass">
+                        <div className="font-semibold text-neutral-900 dark:text-white flex items-center justify-between">
                           <span>3. Elasticsearch & Redis Hot Cache</span>
-                          <span className="text-[10px] bg-amber-200 dark:bg-amber-800 px-1.5 py-0.5 rounded">-35% Latency</span>
+                          <span className="text-[10px] text-neutral-400 font-mono">-35% Latency</span>
                         </div>
-                        <p className="text-xs mt-1.5 text-slate-600 dark:text-slate-300 font-sans">
-                          Multi-dimensional query mapping, composite filter caching, and hot query Redis storage reducing database load by over 60%.
+                        <p className="text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">
+                          Multi-dimensional query mapping, composite geo-filters, and hot-query caching reducing database hits by 60%.
                         </p>
                       </div>
                     </div>
                   )}
 
                   {activeTab === 2 && (
-                    <div className="space-y-3 text-xs font-mono">
-                      <div className="p-3.5 rounded-xl bg-purple-50 dark:bg-purple-950/50 border border-purple-200 dark:border-purple-900 text-purple-900 dark:text-purple-200">
-                        <div className="font-bold flex items-center justify-between">
-                          <span>1. FastAPI Asynchronous API</span>
-                          <span className="text-[10px] bg-purple-200 dark:bg-purple-800 px-1.5 py-0.5 rounded">Async Python</span>
+                    <div className="space-y-2.5 text-xs">
+                      <div className="p-3.5 rounded-xl liquid-glass">
+                        <div className="font-semibold text-neutral-900 dark:text-white flex items-center justify-between">
+                          <span>1. FastAPI Non-Blocking API</span>
+                          <span className="text-[10px] text-neutral-400 font-mono">Python Async</span>
                         </div>
-                        <p className="text-xs mt-1.5 text-slate-600 dark:text-slate-300 font-sans">
-                          High-concurrency async endpoints handle requests for instant property amenity and lease agreement summaries.
+                        <p className="text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">
+                          Receives property summarization queries and fetches user context with async endpoints.
                         </p>
                       </div>
 
-                      <div className="flex justify-center text-purple-500">
-                        <ArrowRight className="w-4 h-4 rotate-90" />
+                      <div className="flex justify-center text-neutral-400 dark:text-neutral-600">
+                        <ArrowRight className="w-3.5 h-3.5 rotate-90" />
                       </div>
 
-                      <div className="p-3.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 border border-indigo-200 dark:border-indigo-900 text-indigo-900 dark:text-indigo-200">
-                        <div className="font-bold flex items-center justify-between">
-                          <span>2. pgvector Semantic Search</span>
-                          <span className="text-[10px] bg-indigo-200 dark:bg-indigo-800 px-1.5 py-0.5 rounded">Cosine Distance</span>
+                      <div className="p-3.5 rounded-xl liquid-glass">
+                        <div className="font-semibold text-neutral-900 dark:text-white flex items-center justify-between">
+                          <span>2. pgvector Cosine Index</span>
+                          <span className="text-[10px] text-neutral-400 font-mono">Vector Search</span>
                         </div>
-                        <p className="text-xs mt-1.5 text-slate-600 dark:text-slate-300 font-sans">
-                          Generates embeddings and performs cosine vector similarity lookups to retrieve relevant property clauses from PostgreSQL.
+                        <p className="text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">
+                          Computes query embeddings and performs similarity lookups against chunked lease documents in PostgreSQL.
                         </p>
                       </div>
 
-                      <div className="flex justify-center text-indigo-500">
-                        <ArrowRight className="w-4 h-4 rotate-90" />
+                      <div className="flex justify-center text-neutral-400 dark:text-neutral-600">
+                        <ArrowRight className="w-3.5 h-3.5 rotate-90" />
                       </div>
 
-                      <div className="p-3.5 rounded-xl bg-cyan-50 dark:bg-cyan-950/50 border border-cyan-200 dark:border-cyan-900 text-cyan-900 dark:text-cyan-200">
-                        <div className="font-bold flex items-center justify-between">
-                          <span>3. Contextual LLM Synthesis</span>
-                          <span className="text-[10px] bg-cyan-200 dark:bg-cyan-800 px-1.5 py-0.5 rounded">Grounded RAG</span>
+                      <div className="p-3.5 rounded-xl liquid-glass">
+                        <div className="font-semibold text-neutral-900 dark:text-white flex items-center justify-between">
+                          <span>3. LLM Completion Guard</span>
+                          <span className="text-[10px] text-neutral-400 font-mono">Sub-Second RAG</span>
                         </div>
-                        <p className="text-xs mt-1.5 text-slate-600 dark:text-slate-300 font-sans">
-                          Injects retrieved chunks into guarded prompts to generate accurate, hallucination-free summaries in sub-second response times.
+                        <p className="text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">
+                          Assembles grounded prompt with retrieved chunks, calling LLM API to return instant, accurate property summaries.
                         </p>
                       </div>
                     </div>
@@ -297,21 +287,23 @@ export default function ArchitectureShowcase() {
                 </div>
               )}
 
-              {/* View 2: Code Snippet */}
+              {/* Code Pattern View (macOS Terminal Look) */}
               {viewMode === 'code' && current.codeSnippet && (
-                <div className="rounded-xl overflow-hidden border border-slate-800 bg-slate-950 text-slate-200">
-                  <div className="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-800 text-xs font-mono text-slate-400">
-                    <span className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block"></span>
-                      <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block"></span>
-                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block"></span>
-                      <span className="ml-2 text-slate-300 font-semibold">{current.codeSnippet.filename}</span>
-                    </span>
-                    <span className="uppercase text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-300">
+                <div className="rounded-xl overflow-hidden bg-neutral-950 text-neutral-200 border border-neutral-800 shadow-xl font-mono text-xs">
+                  <div className="flex items-center justify-between px-3.5 py-2.5 bg-neutral-900/90 border-b border-neutral-800">
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
+                      <span className="ml-2 text-neutral-400 text-[11px] font-sans">
+                        {current.codeSnippet.filename}
+                      </span>
+                    </div>
+                    <span className="text-[10px] uppercase text-neutral-400 bg-neutral-800 px-1.5 py-0.5 rounded">
                       {current.codeSnippet.lang}
                     </span>
                   </div>
-                  <pre className="p-4 text-xs font-mono leading-relaxed overflow-x-auto text-slate-200 selection:bg-blue-600 selection:text-white">
+                  <pre className="p-4 leading-relaxed overflow-x-auto text-[11px] text-neutral-300">
                     <code>{current.codeSnippet.code}</code>
                   </pre>
                 </div>

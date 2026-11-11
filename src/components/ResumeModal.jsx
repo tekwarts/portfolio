@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Printer, Copy, Check, Download, ExternalLink } from 'lucide-react';
+import { X, Printer, Copy, Check, Download } from 'lucide-react';
 import { personalInfo, experiences, skillCategories, education } from '../data/resumeData';
 
 export default function ResumeModal({ isOpen, onClose }) {
@@ -44,26 +44,26 @@ ${education.degree}                        ${education.period}
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/50 backdrop-blur-md flex items-center justify-center p-3 sm:p-6">
       
       {/* Modal Dialog */}
-      <div className="relative w-full max-w-4xl bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col max-h-[92vh] overflow-hidden">
+      <div className="relative w-full max-w-4xl liquid-glass rounded-[32px] shadow-2xl flex flex-col max-h-[92vh] overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         
         {/* Modal Toolbar */}
-        <div className="no-print flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+        <div className="no-print flex items-center justify-between px-6 py-4 border-b border-black/[0.06] dark:border-white/[0.08] bg-white/40 dark:bg-black/30">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-slate-900 dark:text-white text-base">
-              Interactive Resume Document
+            <span className="font-semibold text-neutral-900 dark:text-white text-sm">
+              Standard Paper Resume View
             </span>
-            <span className="text-xs px-2 py-0.5 rounded bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300 font-medium">
-              Print & ATS Ready
+            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-black/[0.04] dark:bg-white/[0.08] text-neutral-600 dark:text-neutral-300">
+              ATS Standard 1-Page
             </span>
           </div>
 
           <div className="flex items-center gap-2">
             <button
               onClick={handleCopyText}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full liquid-glass text-neutral-700 dark:text-neutral-200 hover:bg-white/80 dark:hover:bg-white/20 transition-all"
             >
               {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
               <span>{copied ? 'Copied' : 'Copy Text'}</span>
@@ -71,7 +71,7 @@ ${education.degree}                        ${education.period}
 
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition-colors"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-medium rounded-full bg-neutral-900 text-white dark:bg-white dark:text-neutral-950 shadow-sm active:scale-95 transition-all"
             >
               <Printer className="w-3.5 h-3.5" />
               <span>Print / PDF</span>
@@ -79,15 +79,15 @@ ${education.degree}                        ${education.period}
 
             <button
               onClick={onClose}
-              className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors ml-1"
+              className="p-1.5 rounded-full liquid-glass text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors ml-1"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4" />
             </button>
           </div>
         </div>
 
-        {/* Resume Content Body (Formatted similarly to classic standard 1-page paper resume) */}
-        <div className="overflow-y-auto p-6 sm:p-10 bg-white text-black font-sans text-xs sm:text-sm selection:bg-blue-100 selection:text-black">
+        {/* Paper Resume Body */}
+        <div className="overflow-y-auto p-6 sm:p-10 bg-white text-black font-sans text-xs sm:text-sm selection:bg-neutral-200 selection:text-black">
           
           {/* Header */}
           <div className="text-center border-b border-black pb-4 mb-5">
@@ -239,4 +239,3 @@ ${education.degree}                        ${education.period}
     </div>
   );
 }
-
