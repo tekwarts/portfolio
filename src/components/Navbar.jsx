@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Sun, Moon, Menu, X, FileText, Mail, 
   MapPin, ShieldCheck, Sparkles 
@@ -7,14 +7,34 @@ import { personalInfo } from '../data/resumeData';
 
 export default function Navbar({ darkMode, setDarkMode, onOpenResume, onOpenContact }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('overview');
 
   const navLinks = [
-    { name: 'Overview', href: '#overview' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Architecture', href: '#architecture' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Education', href: '#education' },
+    { name: 'Overview', href: '#overview', id: 'overview' },
+    { name: 'Experience', href: '#experience', id: 'experience' },
+    { name: 'Architecture', href: '#architecture', id: 'architecture' },
+    { name: 'Skills', href: '#skills', id: 'skills' },
+    { name: 'Education', href: '#education', id: 'education' },
   ];
+
+  // Scroll spy to highlight active section
+  useEffect(() => {
+    const handleScroll = () => {
+      const sectionElements = navLinks.map(link => document.getElementById(link.id));
+      const scrollPosition = window.scrollY + 120;
+
+      for (let i = sectionElements.length - 1; i >= 0; i--) {
+        const el = sectionElements[i];
+        if (el && el.offsetTop <= scrollPosition) {
+          setActiveSection(navLinks[i].id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <header className="sticky top-4 z-40 w-full px-4 sm:px-6 pointer-events-none">
@@ -36,17 +56,24 @@ export default function Navbar({ darkMode, setDarkMode, onOpenResume, onOpenCont
             </div>
           </a>
 
-          {/* Desktop Links (Apple Segmented Style) */}
+          {/* Desktop Links (Apple Segmented Style with active indicator) */}
           <nav className="hidden md:flex items-center gap-1 bg-black/[0.03] dark:bg-white/[0.04] p-1 rounded-full border border-black/[0.04] dark:border-white/[0.06]">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="px-3.5 py-1 text-xs font-medium text-neutral-600 hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-white rounded-full hover:bg-white/80 dark:hover:bg-white/10 transition-all duration-200"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.id;
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={`px-3.5 py-1 text-xs font-medium rounded-full transition-all duration-200 ${
+                    isActive
+                      ? 'bg-white text-neutral-950 dark:bg-white/15 dark:text-white shadow-xs'
+                      : 'text-neutral-600 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white'
+                  }`}
+                >
+                  {link.name}
+                </a>
+              );
+            })}
           </nav>
 
           {/* Quick Actions */}

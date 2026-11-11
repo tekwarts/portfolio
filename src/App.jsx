@@ -32,6 +32,18 @@ export default function App() {
     }
   }, [darkMode]);
 
+  // Global Escape key listener to dismiss open sheet modals
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setResumeModalOpen(false);
+        setContactModalOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-neutral-100 text-neutral-900 dark:bg-[#0c0c0e] dark:text-neutral-100 selection:bg-blue-500 selection:text-white transition-colors duration-500 overflow-x-hidden font-sans">
       
