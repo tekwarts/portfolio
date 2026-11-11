@@ -10,6 +10,7 @@ export const personalInfo = {
   languages: [
     { name: "English", level: "C1 (Fluent / Professional)" },
     { name: "French", level: "C1 (Fluent / Professional)" },
+    { name: "Chinese (Mandarin)", level: "Native / Bilingual" },
   ],
   stats: [
     { label: "Years of Experience", value: "5+" },
@@ -18,7 +19,7 @@ export const personalInfo = {
     { label: "Relocation Status", value: "Toronto, CA (PR)" },
   ],
   socials: {
-    github: "https://github.com",
+    github: "https://github.com/bit-happy",
     linkedin: "https://linkedin.com",
     email: "mailto:eddie.li.cs@gmail.com",
   }

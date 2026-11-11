@@ -15,7 +15,7 @@ export default function ResumeModal({ isOpen, onClose }) {
     const text = `
 ${personalInfo.name}
 ${personalInfo.email} | ${personalInfo.phone} | ${personalInfo.location}
-${personalInfo.status} | English(C1), French(C1)
+${personalInfo.status} | English(C1), French(C1), Chinese(Native)
 
 EXPERIENCE
 ${experiences.map(e => `
@@ -102,7 +102,7 @@ ${education.degree}                        ${education.period}
               <span>{personalInfo.location}</span>
             </div>
             <div className="mt-1 text-xs font-semibold text-neutral-800">
-              {personalInfo.status} | English(C1), French(C1)
+              {personalInfo.status} | English(C1), French(C1), Chinese(Native)
             </div>
           </div>
 

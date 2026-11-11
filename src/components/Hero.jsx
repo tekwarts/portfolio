@@ -28,7 +28,7 @@ export default function Hero({ onOpenResume, onOpenContact }) {
 
           <div className="liquid-glass-subtle rounded-full px-3.5 py-1 text-xs font-medium text-neutral-600 dark:text-neutral-300 flex items-center gap-1.5">
             <Languages className="w-3.5 h-3.5 text-neutral-500" />
-            <span>Bilingual (English C1 • French C1)</span>
+            <span>Trilingual (English C1 • French C1 • Chinese Native)</span>
           </div>
         </div>
 
