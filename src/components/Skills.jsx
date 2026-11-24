@@ -41,13 +41,13 @@ const skillIconMap = {
 };
 
 const categoryIcons = {
-  'Programming Languages': Code2,
+  'Languages': Code2,
   'AI & LLM': Sparkles,
-  'Backend & Frameworks': Server,
+  'LLMOps': Cpu,
+  'Backend & Frontend': Server,
   'Cloud & DevOps': Cloud,
-  'Databases': Database,
+  'Databases & Retrieval': Database,
   'Microservices & Messaging': Network,
-  'Core Concepts': Cpu,
 };
 
 export default function Skills() {
@@ -82,7 +82,7 @@ export default function Skills() {
               Skills & Technologies
             </h2>
             <p className="mt-2 text-sm sm:text-base text-neutral-500 dark:text-neutral-400 max-w-xl">
-              Languages, distributed streaming platforms, cloud infra, and vector databases applied across production services.
+              AI/LLM frameworks, agentic workflows, vector databases, cloud platforms, and backend technologies applied across production services.
             </p>
           </div>
 

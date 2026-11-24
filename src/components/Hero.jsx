@@ -38,10 +38,10 @@ export default function Hero({ onOpenResume, onOpenContact }) {
             Eddie Li
           </h1>
           <p className="mt-4 text-xl sm:text-2xl font-medium tracking-tight text-neutral-700 dark:text-neutral-300">
-            Senior Software Engineer building resilient distributed systems, Kafka event streaming pipelines, and AI backend microservices.
+            AI Full Stack Engineer building production AI systems, agentic LangGraph workflows, RAG pipelines, and scalable backend services.
           </p>
           <p className="mt-4 text-base sm:text-lg text-neutral-500 dark:text-neutral-400 leading-relaxed max-w-2xl font-normal">
-            Based in Toronto, Canada. Over 5 years scaling high-concurrency cloud backends at Ruiting Tech, with verified performance improvements in message throughput (+40%) and search query latency (-35%).
+            Based in Toronto, Canada. Over 5 years building AI-powered services and scalable backends at TaskUp and Ruiting Tech, specializing in LangGraph agentic workflows, RAG with Pinecone and pgvector, and LLMOps.
           </p>
         </div>
 
@@ -86,13 +86,13 @@ export default function Hero({ onOpenResume, onOpenContact }) {
           
           <div className="liquid-glass rounded-3xl p-5 sm:p-6 transition-all duration-300 hover:translate-y-[-2px]">
             <div className="text-xs uppercase font-medium tracking-wider text-neutral-400 dark:text-neutral-500 mb-2">
-              Kafka Throughput
+              Agentic AI
             </div>
             <div className="text-3xl sm:text-4xl font-semibold tracking-tight text-neutral-950 dark:text-white">
-              +40%
+              LangGraph
             </div>
             <div className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 font-normal">
-              Partitioned Outbox pattern
+              Stateful agents & tool calling
             </div>
           </div>
 
@@ -104,7 +104,7 @@ export default function Hero({ onOpenResume, onOpenContact }) {
               -35%
             </div>
             <div className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 font-normal">
-              Elasticsearch & Redis cache
+              Elasticsearch optimization
             </div>
           </div>
 
@@ -116,19 +116,19 @@ export default function Hero({ onOpenResume, onOpenContact }) {
               5+ Yrs
             </div>
             <div className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 font-normal">
-              Continuous backend impact
+              AI & backend systems
             </div>
           </div>
 
           <div className="liquid-glass rounded-3xl p-5 sm:p-6 transition-all duration-300 hover:translate-y-[-2px]">
             <div className="text-xs uppercase font-medium tracking-wider text-neutral-400 dark:text-neutral-500 mb-2">
-              AI Microservice
+              RAG Pipelines
             </div>
             <div className="text-3xl sm:text-4xl font-semibold tracking-tight text-neutral-950 dark:text-white">
               RAG
             </div>
             <div className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 font-normal">
-              FastAPI & pgvector
+              Pinecone, pgvector & Cohere
             </div>
           </div>
 

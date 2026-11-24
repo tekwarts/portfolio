@@ -1,8 +1,8 @@
 export const personalInfo = {
   name: "Eddie Li",
-  title: "Senior Software Engineer",
-  tagline: "Distributed Systems & Cloud Backend Specialist",
-  summary: "Senior Software Engineer with 5+ years of experience designing and scaling resilient, high-throughput backend services, event-driven distributed architectures, and AI microservices. Proven track record boosting messaging throughput by 40% with Apache Kafka, optimizing Elasticsearch search latency by 35%, and orchestrating cloud-native workloads on AWS and Kubernetes.",
+  title: "AI Full Stack Engineer",
+  tagline: "AI Engineering & Full Stack Development Specialist",
+  summary: "AI Full Stack Engineer with 5+ years of experience building production AI systems, agentic workflows, RAG pipelines, and scalable backend services. Proven track record designing LangGraph-based agentic AI workflows, optimizing Elasticsearch search latency by 35%, and deploying containerized AI services on Google Cloud.",
   email: "eddie.li.cs@gmail.com",
   phone: "+1 4378899598",
   location: "Toronto, Canada",
@@ -14,7 +14,7 @@ export const personalInfo = {
   ],
   stats: [
     { label: "Years of Experience", value: "5+" },
-    { label: "Kafka Throughput Gain", value: "+40%" },
+    { label: "AI & LLM Systems", value: "RAG" },
     { label: "Search Latency Cut", value: "-35%" },
     { label: "Relocation Status", value: "Toronto, CA (PR)" },
   ],
@@ -27,46 +27,77 @@ export const personalInfo = {
 
 export const experiences = [
   {
-    id: "sr-swe",
-    role: "Senior Software Engineer",
-    company: "Ruiting Tech",
-    location: "Shanghai, China",
-    period: "Aug 2025 – July 2026",
-    badge: "Recent",
-    type: "Full-time",
-    category: "distributed",
-    summary: "Led architectural modernization and distributed event-driven microservices across property reservation, leasing, and inventory ecosystems.",
+    id: "ai-fse",
+    role: "AI Full Stack Engineer (Contract)",
+    company: "TaskUp",
+    location: "Toronto, Canada",
+    period: "Sep 2026 – Nov 2026",
+    badge: "Current",
+    type: "Contract",
+    category: "ai",
+    summary: "Built an AI-powered task planning platform and stateful agentic workflows with LangGraph, integrating RAG with Pinecone and deploying containerized AI services on Google Cloud.",
     highlights: [
       {
-        metric: "+40% Throughput",
-        text: "Architected event-driven reservation and leasing workflows using Apache Kafka, implementing partitioned consumers, transactional outbox patterns, retry policies, and dead-letter queues to increase message-processing throughput by 40% while improving delivery reliability."
+        metric: "AI Task Platform",
+        text: "Developed an AI-powered task planning platform using Python, FastAPI, LangChain, and LLM APIs, automating task decomposition, personalized scheduling, and productivity analysis based on historical activity."
       },
       {
-        metric: "Distributed Consistency",
-        text: "Designed distributed transaction workflows across reservation, inventory, and leasing microservices using Spring Transaction Management, MySQL, and PostgreSQL to maintain consistency."
+        metric: "Agentic Workflows",
+        text: "Designed stateful LangGraph-based agentic workflows using Groq LLM APIs, tool calling, and Pydantic structured outputs, implementing output validation, and AI guardrails to improve workflow reliability."
       },
       {
-        metric: "Cloud & K8s Modernization",
-        text: "Led modernization of Java backend infrastructure on AWS (EC2, EKS, RDS, ElastiCache, S3), deploying containerized services with Docker and Kubernetes and implementing horizontal autoscaling and automated CI/CD pipelines."
-      },
-      {
-        metric: "AI Microservice & RAG",
-        text: "Developed an AI-powered property summarization microservice using Python, FastAPI, and LLM APIs, implementing RAG with pgvector to retrieve relevant property information and generate summaries."
+        metric: "RAG & Observability",
+        text: "Implemented Retrieval-Augmented Generation (RAG) using Pinecone, Cohere embeddings, and PostgreSQL, integrating LangSmith for LLM evaluation, execution tracing, latency monitoring, and token usage analysis and deployed containerized AI services using Google Cloud."
       }
     ],
     technologies: [
-      "Apache Kafka",
-      "Transactional Outbox",
-      "Spring Boot",
-      "FastAPI",
       "Python",
+      "FastAPI",
+      "LangChain",
+      "LangGraph",
+      "Groq LLM APIs",
+      "Pydantic",
+      "Pinecone",
+      "Cohere Embeddings",
+      "LangSmith",
+      "PostgreSQL",
+      "Google Cloud"
+    ]
+  },
+  {
+    id: "ai-eng",
+    role: "AI Engineer",
+    company: "Ruiting Tech",
+    location: "Shanghai, China",
+    period: "Aug 2024 – Aug 2026",
+    type: "Full-time",
+    category: "ai",
+    summary: "Developed production-oriented AI-powered property intelligence services with RAG, agentic AI workflows using LangGraph, and comprehensive automated testing.",
+    highlights: [
+      {
+        metric: "AI Property Intelligence",
+        text: "Developed a production-oriented AI-powered property intelligence service using Python, FastAPI, LangChain, and LLM APIs, generating property descriptions and structured summaries, with prompt optimization and token usage management."
+      },
+      {
+        metric: "RAG with pgvector",
+        text: "Implemented Retrieval-Augmented Generation (RAG) using PostgreSQL, pgvector, and vector embeddings, optimizing semantic retrieval, evaluating retrieval relevance and response groundedness, and mitigating LLM hallucinations."
+      },
+      {
+        metric: "Agentic AI Workflows",
+        text: "Designed and orchestrated agentic AI workflows using LangGraph, implementing stateful agents, tool calling, conditional routing, error handling, and automated testing using Pytest to ensure reliable multi-step property management operations."
+      }
+    ],
+    technologies: [
+      "Python",
+      "FastAPI",
+      "LangChain",
+      "LangGraph",
+      "LLM APIs",
       "pgvector",
-      "RAG / LLMs",
-      "AWS (EKS, RDS, S3)",
-      "Kubernetes",
-      "Docker",
-      "MySQL",
-      "PostgreSQL"
+      "PostgreSQL",
+      "Pydantic",
+      "Pytest",
+      "RAG"
     ]
   },
   {
@@ -74,46 +105,39 @@ export const experiences = [
     role: "Software Engineer II",
     company: "Ruiting Tech",
     location: "Shanghai, China",
-    period: "Nov 2023 – July 2025",
+    period: "Nov 2023 – July 2024",
     type: "Full-time",
     category: "backend",
-    summary: "Engineered scalable backend microservices, high-performance database schema architectures, and asynchronous data sync pipelines.",
+    summary: "Engineered scalable property management microservices, optimized Elasticsearch search performance, and built event-driven data synchronization pipelines.",
     highlights: [
       {
-        metric: "Scalable REST Core",
-        text: "Designed and developed scalable backend services using Java, Spring Boot, Spring Data JPA, and Hibernate, implementing RESTful APIs for property listing, search, leasing, and inventory management."
-      },
-      {
-        metric: "Document Schema Design",
-        text: "Built a flexible property metadata management service using Spring Data MongoDB and MongoDB, modeling heterogeneous property attributes and implementing document validation, compound indexes."
+        metric: "Scalable Microservices",
+        text: "Developed scalable property management microservices using Java, Spring Boot, Spring Data JPA, and Hibernate, implementing RESTful APIs for property listings, reservations, leasing, and inventory management."
       },
       {
         metric: "-35% Search Latency",
-        text: "Optimized Elasticsearch index mappings, query execution, and filtering strategies for multi-dimensional property searches, reducing search latency by 35% while supporting high-volume search workloads."
+        text: "Optimized Elasticsearch index mappings, query execution, and filtering strategies for multi-dimensional property searches, reducing search latency by 35% under high-volume workloads."
       },
       {
-        metric: "Transactional Workflows",
-        text: "Developed a leasing and contract management service using Java, Spring Boot, PostgreSQL, and Hibernate, implementing relational data models, transactional contract workflows, and optimized SQL queries."
+        metric: "Event-Driven Pipelines",
+        text: "Built event-driven data synchronization pipelines using Apache Kafka, integrating MongoDB property metadata with Elasticsearch through idempotent consumers, retries, and asynchronous indexing."
       },
       {
-        metric: "Asynchronous Pipeline",
-        text: "Implemented asynchronous listing synchronization using Apache Kafka, integrating MongoDB-backed metadata services with Elasticsearch indexing workers through idempotent event consumers and retry mechanisms."
-      },
-      {
-        metric: "Caching & DB Tuning",
-        text: "Improved backend response times and database efficiency through Redis caching, SQL query optimization, and composite indexing, reducing unnecessary database access and improving performance."
+        metric: "Distributed Concurrency",
+        text: "Implemented distributed concurrency control using Redis, MySQL, PostgreSQL, and optimistic locking, maintaining reservation consistency under concurrent requests."
       }
     ],
     technologies: [
       "Java",
       "Spring Boot",
       "Spring Data JPA",
+      "Hibernate",
       "Elasticsearch",
-      "MongoDB",
-      "PostgreSQL",
       "Apache Kafka",
+      "MongoDB",
       "Redis",
-      "SQL Optimization"
+      "MySQL",
+      "PostgreSQL"
     ]
   },
   {
@@ -124,54 +148,44 @@ export const experiences = [
     period: "July 2021 – Oct 2023",
     type: "Full-time",
     category: "fullstack",
-    summary: "Built core REST APIs, relational database schemas, and modern responsive property management frontend interfaces.",
+    summary: "Built internal property management website, designed RESTful APIs, and developed responsive administrative dashboards.",
     highlights: [
       {
-        metric: "Core APIs & CRUD",
-        text: "Developed RESTful backend APIs for property listing and reservation management using Java, Spring Boot, Spring MVC, and Spring Data JPA, supporting CRUD operations, pagination, filtering, and transaction."
+        metric: "Internal Property Platform",
+        text: "Developed an internal property management website using Node.js, Express.js, React, and TypeScript, enabling operations teams to manage property listings, reservations, and leasing workflows."
       },
       {
-        metric: "Relational Schemas",
-        text: "Designed and maintained relational database schemas using MySQL, implementing entity relationships, SQL queries, database indexes, and transaction management to support core property management workflows."
+        metric: "RESTful APIs",
+        text: "Designed and implemented RESTful APIs using Node.js and Express.js, integrating MySQL and MongoDB for property records, user accounts, and reservation management."
       },
       {
         metric: "React & Tailwind UI",
-        text: "Built responsive property management interfaces using React, JavaScript, and Tailwind CSS, developing reusable components for listing administration, property search, and reservation workflows."
-      },
-      {
-        metric: "Robust Test Coverage",
-        text: "Developed unit and integration tests using JUnit 5, Mockito, improving backend code quality."
-      },
-      {
-        metric: "CI/CD & Collaboration",
-        text: "Collaborated with senior engineers on application debugging, code reviews, and deployment workflows using Git, Maven, Docker, and CI/CD pipelines."
+        text: "Built responsive administrative dashboards using React, TypeScript, and Tailwind CSS, implementing reusable UI components, dynamic property search filters, and interactive management interfaces."
       }
     ],
     technologies: [
-      "Java",
-      "Spring MVC",
-      "Spring Data JPA",
-      "MySQL",
+      "Node.js",
+      "Express.js",
       "React",
+      "TypeScript",
       "Tailwind CSS",
-      "JavaScript",
-      "JUnit 5",
-      "Mockito",
-      "Docker",
-      "Git"
+      "MySQL",
+      "MongoDB"
     ]
   }
 ];
 
 export const skillCategories = [
   {
-    title: "Programming Languages",
+    title: "Languages",
     icon: "code",
     color: "blue",
     skills: [
-      { name: "Java", icon: "coffee" },
       { name: "Python", icon: "terminal" },
+      { name: "Java", icon: "coffee" },
       { name: "JavaScript", icon: "file-code" },
+      { name: "TypeScript", icon: "file-code" },
+      { name: "SQL", icon: "database" },
       { name: "HTML", icon: "layout" },
       { name: "CSS", icon: "palette" }
     ]
@@ -181,28 +195,38 @@ export const skillCategories = [
     icon: "sparkles",
     color: "purple",
     skills: [
-      { name: "FastAPI", icon: "zap" },
       { name: "LLM APIs", icon: "brain" },
       { name: "RAG", icon: "search" },
       { name: "LangChain", icon: "link-2" },
+      { name: "LangGraph", icon: "network" },
       { name: "LangSmith", icon: "activity" },
-      { name: "pgvector", icon: "database" },
-      { name: "Pinecone", icon: "compass" },
-      { name: "MCP", icon: "cpu" },
-      { name: "Cursor", icon: "mouse-pointer" }
+      { name: "AI Agents", icon: "cpu" },
+      { name: "MCP", icon: "cpu" }
     ]
   },
   {
-    title: "Backend & Frameworks",
+    title: "LLMOps",
+    icon: "cpu",
+    color: "indigo",
+    skills: [
+      { name: "LLM Evaluation", icon: "search" },
+      { name: "Observability", icon: "activity" },
+      { name: "Prompt Engineering", icon: "brain" },
+      { name: "Token Optimization", icon: "zap" }
+    ]
+  },
+  {
+    title: "Backend & Frontend",
     icon: "server",
     color: "emerald",
     skills: [
+      { name: "FastAPI", icon: "zap" },
+      { name: "Pydantic", icon: "shield-check" },
       { name: "Spring Boot", icon: "server" },
-      { name: "React.js", icon: "atom" },
-      { name: "Spring MVC", icon: "layers" },
       { name: "Spring Data JPA", icon: "database" },
-      { name: "Hibernate", icon: "layers" },
-      { name: "RESTful APIs", icon: "globe" }
+      { name: "Node.js", icon: "server" },
+      { name: "Express.js", icon: "globe" },
+      { name: "React.js", icon: "layers" }
     ]
   },
   {
@@ -211,20 +235,21 @@ export const skillCategories = [
     color: "amber",
     skills: [
       { name: "AWS", icon: "cloud" },
-      { name: "GCP", icon: "globe" },
+      { name: "Google Cloud (GCP)", icon: "globe" },
+      { name: "Azure", icon: "cloud" },
       { name: "Kubernetes", icon: "box" },
       { name: "Docker", icon: "box" },
-      { name: "CI/CD", icon: "git-branch" },
-      { name: "Git", icon: "git-branch" },
-      { name: "Maven", icon: "package" }
+      { name: "CI/CD", icon: "git-branch" }
     ]
   },
   {
-    title: "Databases",
+    title: "Databases & Retrieval",
     icon: "database",
     color: "rose",
     skills: [
       { name: "PostgreSQL", icon: "database" },
+      { name: "pgvector", icon: "database" },
+      { name: "Pinecone", icon: "compass" },
       { name: "MySQL", icon: "database" },
       { name: "Redis", icon: "zap" },
       { name: "MongoDB", icon: "database" },
@@ -237,20 +262,7 @@ export const skillCategories = [
     icon: "network",
     color: "cyan",
     skills: [
-      { name: "Apache Kafka", icon: "radio" },
-      { name: "Transactional Outbox Pattern", icon: "shield-check" },
-      { name: "Partitioned Consumers & DLQ", icon: "split" },
-      { name: "Distributed Transactions", icon: "network" }
-    ]
-  },
-  {
-    title: "Core Concepts",
-    icon: "cpu",
-    color: "indigo",
-    skills: [
-      { name: "Data Structures", icon: "binary" },
-      { name: "Algorithms", icon: "braces" },
-      { name: "Distributed Systems", icon: "network" }
+      { name: "Apache Kafka", icon: "radio" }
     ]
   }
 ];
@@ -268,58 +280,219 @@ export const education = {
 
 export const architectureShowcases = [
   {
-    title: "Event-Driven Reservation & Leasing Engine",
-    impact: "+40% Throughput Boost & Zero Message Loss",
-    badge: "Apache Kafka & Microservices",
-    description: "Designed resilient asynchronous event streaming with transactional outbox pattern to decouple reservation, leasing, and payment services, guaranteeing exactly-once semantics and high availability.",
+    title: "Saga Pattern & Transactional Outbox",
+    impact: "Reliable Distributed Transaction Management",
+    badge: "Saga & Transactional Outbox",
+    description: "Distributed transaction management across Java Spring Boot microservices using the Saga pattern and transactional outbox. Each service commits its own local transaction, publishes events reliably, and uses compensating actions to recover from downstream failures.",
     features: [
-      "Transactional Outbox pattern with Debezium/Kafka Connect to ensure atomic database writes and message emission",
-      "Partitioned consumer groups for parallelized horizontal throughput scaling",
-      "Exponential backoff retry mechanisms with automated Dead-Letter Queue (DLQ) routing",
-      "Spring Transaction Management across distributed service boundaries"
+      "Saga steps coordinate local service transactions with compensating actions when a later step fails",
+      "Business state and outbox events commit together in PostgreSQL, avoiding a database-and-message dual write",
+      "An outbox relay publishes committed events to Kafka and retries failed deliveries",
+      "Idempotent consumers deduplicate event IDs within their local transaction to handle at-least-once delivery"
     ],
-    tech: ["Apache Kafka", "Spring Boot", "PostgreSQL", "Docker", "AWS EKS"],
+    tech: ["Java", "Spring Boot", "PostgreSQL", "Kafka", "Saga Pattern", "Transactional Outbox"],
+    flow: [
+      { title: "1. Commit State & Event", label: "Local Transaction", description: "Each service updates its business state and inserts an outbox event in the same PostgreSQL transaction. Both changes commit or roll back together." },
+      { title: "2. Relay & Process", label: "Kafka", description: "The relay publishes committed outbox events. Consumers deduplicate event IDs and atomically commit their local changes and the next saga event." },
+      { title: "3. Complete or Compensate", label: "Saga", description: "Successful steps advance the saga. A failure triggers compensating actions for completed steps, with retries and persisted progress until recovery completes." }
+    ],
     codeSnippet: {
       lang: "java",
-      filename: "ReservationOutboxPublisher.java",
-      code: `@Transactional\npublic ReservationResponse createReservation(ReservationRequest req) {\n    // 1. Persist business entity in primary database\n    Reservation reservation = reservationRepository.save(new Reservation(req));\n\n    // 2. Persist event into transactional outbox table in SAME local transaction\n    OutboxEvent event = OutboxEvent.builder()\n        .aggregateType("RESERVATION")\n        .aggregateId(reservation.getId().toString())\n        .eventType("RESERVATION_CREATED")\n        .payload(objectMapper.writeValueAsString(reservation))\n        .createdAt(Instant.now())\n        .build();\n    outboxRepository.save(event);\n\n    // 3. Kafka Debezium connector streams outbox table to Kafka topic with partition key = aggregateId\n    return ReservationResponse.from(reservation);\n}`
+      filename: "SagaOutboxPattern.java",
+      code: `// Illustrative Spring service methods; helpers omitted.
+@Transactional
+public void reserveProperty(ReserveCommand command) {
+    bookingService.reserve(command.propertyId());
+    outbox.save(event("PropertyReserved", command.sagaId()));
+} // Business state and event commit together.
+
+@Transactional
+public void onSagaFailure(SagaFailure event) {
+    // Unique event ID is recorded in this transaction.
+    if (!inbox.recordIfNew(event.id())) return;
+
+    // Compensation reverses this saga's reservation.
+    bookingService.releaseReservation(event.sagaId());
+    outbox.save(event("ReservationReleased", event.sagaId()));
+}
+
+// Relay: publish committed outbox rows, then mark sent.
+// A crash between those steps can cause redelivery.
+// Consumers deduplicate in the same local transaction.
+// Compensation is retried until it succeeds.`
     }
   },
   {
-    title: "High-Volume Multi-Dimensional Property Search",
-    impact: "-35% Query Latency & Real-time Sync",
-    badge: "Elasticsearch & MongoDB & Kafka",
-    description: "Engineered a dual-database architecture: flexible property attribute storage in MongoDB combined with real-time indexing into Elasticsearch for sub-second multi-dimensional property discovery.",
+    title: "Double-Booking Prevention Engine",
+    impact: "Double-Booking Prevention Under High Concurrency",
+    badge: "Redis & PostgreSQL",
+    description: "Implemented a Java Spring Boot booking backend with three states: available, reserved, and confirmed. Redis distributed locking coordinates concurrent requests for the same property, while PostgreSQL optimistic locking prevents conflicting state updates.",
     features: [
-      "Custom Elasticsearch index analyzers, composite filter caches, and nested document mapping",
-      "Asynchronous Kafka stream workers syncing MongoDB document mutations to Elasticsearch",
-      "Idempotent consumer handlers with duplicate transaction suppression",
-      "Multi-level Redis cache layer reducing direct database load by over 60%"
+      "Redis distributed locks coordinate requests across Spring Boot instances to reduce contention for the same property",
+      "PostgreSQL optimistic locking uses a version field to detect stale writes and prevent conflicting updates",
+      "Explicit state transitions move a property from available to reserved, then from reserved to confirmed",
+      "Combined distributed and optimistic locking prevents double booking while handling high concurrency"
     ],
-    tech: ["Elasticsearch", "MongoDB", "Redis", "Apache Kafka", "Java / Spring"],
+    tech: ["Java", "Spring Boot", "Redis", "Distributed Locking", "PostgreSQL", "Optimistic Locking"],
+    flow: [
+      { title: "1. Acquire Property Lock", label: "Redis", description: "The Spring Boot backend acquires a distributed lock keyed by property ID to coordinate competing requests across application instances." },
+      { title: "2. Validate & Update State", label: "PostgreSQL", description: "Inside a transaction, validate the current state and apply the transition: available → reserved → confirmed. A version check rejects stale concurrent updates." },
+      { title: "3. Commit & Release Lock", label: "Spring Boot", description: "Commit the state change before releasing the Redis lock. Reject conflicting requests so concurrent callers cannot reserve the same available property twice." }
+    ],
     codeSnippet: {
       lang: "java",
-      filename: "ListingSyncKafkaConsumer.java",
-      code: `@KafkaListener(topics = "property.listing.mutations", groupId = "es-indexing-group")\npublic void syncListingToElasticsearch(@Payload ListingEvent event, Acknowledgment ack) {\n    String idempotencyKey = "sync:property:" + event.getPropertyId() + ":" + event.getVersion();\n    Boolean isNew = redisTemplate.opsForValue()\n        .setIfAbsent(idempotencyKey, "PROCESSED", Duration.ofHours(24));\n\n    if (Boolean.TRUE.equals(isNew)) {\n        // Index document with nested geo-points and multi-dimensional filters\n        esPropertyRepository.save(propertyMapper.toIndexDocument(event.getPayload()));\n        redisTemplate.delete("cache:search:hot-queries"); // Invalidate hot query cache\n    }\n    ack.acknowledge();\n}`
+      filename: "BookingConcurrencyPattern.java",
+      code: `// Illustrative coordination pattern; helper methods omitted.
+// Property entity uses a PostgreSQL-backed @Version field.
+@Version
+private Long version;
+
+// Acquire a property-scoped Redis lock before the transaction.
+var lock = propertyLocks.acquire(propertyId);
+try {
+    return transactions.execute(tx -> {
+        var property = repository.findById(propertyId)
+            .orElseThrow();
+
+        if (property.getStatus() != AVAILABLE) {
+            throw new BookingConflictException();
+        }
+
+        property.setStatus(RESERVED);
+        // Version-checked UPDATE rejects a stale write.
+        repository.saveAndFlush(property);
+        return property;
+    }); // Transaction commits before the lock is released.
+} finally {
+    lock.releaseIfOwned();
+}
+
+// Confirmation follows the same locking pattern:
+// validate RESERVED, then transition to CONFIRMED.`
     }
   },
   {
-    title: "AI Property Summarization & RAG Microservice",
-    impact: "Sub-second Property Insights with Vector Search",
-    badge: "Python, FastAPI & pgvector",
-    description: "Created an autonomous property intelligence service that digests extensive property specifications and leasing contracts to generate instant, context-aware summaries.",
+    title: "AI-Powered Task Planning with LangGraph Agents",
+    impact: "Stateful Agentic Workflows with AI Guardrails",
+    badge: "LangGraph & Groq LLM APIs",
+    description: "Designed a stateful AI task planning platform leveraging LangGraph for multi-step agentic workflows with tool calling, conditional routing, and Pydantic structured outputs for reliable task decomposition and scheduling.",
     features: [
-      "FastAPI asynchronous endpoints delivering low-latency LLM completions",
-      "pgvector similarity indexing to retrieve relevant property clauses and amenities",
-      "Prompt optimization and contextual window chunking for cost and token efficiency",
-      "Automated evaluation and monitoring pipeline"
+      "LangGraph stateful agents with tool calling and conditional routing for complex task decomposition",
+      "Groq LLM APIs with Pydantic structured outputs ensuring validated, type-safe AI responses",
+      "AI guardrails and output validation preventing hallucinated or malformed task plans",
+      "FastAPI async endpoints for low-latency task planning and productivity analysis"
     ],
-    tech: ["Python", "FastAPI", "pgvector", "PostgreSQL", "LLM APIs", "Docker"],
+    tech: ["LangGraph", "Groq LLM APIs", "Python", "FastAPI", "Pydantic"],
     codeSnippet: {
       lang: "python",
-      filename: "rag_summarizer_service.py",
-      code: `@router.post("/properties/{property_id}/summarize")\nasync def summarize_property(property_id: str, query: SummarizeRequest, db: AsyncSession = Depends(get_db)):\n    # 1. Compute embedding vector for input query context\n    query_embedding = await get_embedding(query.prompt or "Highlight key terms, pricing, and amenities")\n    \n    # 2. Vector search via pgvector cosine distance index (<=>)\n    stmt = select(PropertyChunk.content)\\\n        .where(PropertyChunk.property_id == property_id)\\\n        .order_by(PropertyChunk.embedding.cosine_distance(query_embedding))\\\n        .limit(5)\n    chunks = (await db.execute(stmt)).scalars().all()\n    \n    # 3. Grounded LLM completion with system prompt guardrails\n    summary = await call_llm(context="\\n".join(chunks), prompt=query.prompt)\n    return {"property_id": property_id, "summary": summary}`
+      filename: "task_planning_agent.py",
+      code: `from langgraph.graph import StateGraph, END
+from pydantic import BaseModel
+from langchain_groq import ChatGroq
+
+class TaskPlan(BaseModel):
+    tasks: list[str]
+    priorities: list[int]
+    schedule: dict[str, str]
+
+llm = ChatGroq(model="llama-3.3-70b-versatile")
+structured_llm = llm.with_structured_output(TaskPlan)
+
+def decompose_task(state):
+    """Decompose user goal into structured task plan."""
+    result = structured_llm.invoke(
+        f"Break down this goal into actionable tasks: {state['goal']}"
+    )
+    return {"plan": result, "step": "validate"}
+
+def validate_plan(state):
+    """Validate and apply AI guardrails to the generated plan."""
+    plan = state["plan"]
+    if len(plan.tasks) == 0:
+        return {"step": "decompose"}  # retry
+    return {"step": "finalize", "validated_plan": plan}
+
+graph = StateGraph()
+graph.add_node("decompose", decompose_task)
+graph.add_node("validate", validate_plan)
+graph.add_conditional_edges("validate", lambda s: s["step"])`
+    }
+  },
+  {
+    title: "RAG Pipeline with Pinecone & LangSmith Observability",
+    impact: "Grounded AI Responses with Full Tracing",
+    badge: "Pinecone & LangSmith",
+    description: "Built a production RAG pipeline using Pinecone for vector retrieval and Cohere embeddings, with LangSmith integration for end-to-end LLM evaluation, execution tracing, latency monitoring, and token usage analysis.",
+    features: [
+      "Pinecone vector index with Cohere embeddings for high-precision semantic retrieval",
+      "LangSmith execution tracing for every LLM call with latency and token cost tracking",
+      "LLM evaluation pipeline measuring retrieval relevance and response groundedness",
+      "Containerized deployment on Google Cloud with PostgreSQL metadata storage"
+    ],
+    tech: ["Pinecone", "Cohere", "LangSmith", "PostgreSQL", "Google Cloud"],
+    codeSnippet: {
+      lang: "python",
+      filename: "rag_pipeline.py",
+      code: `from langsmith import traceable
+from pinecone import Pinecone
+import cohere
+
+pc = Pinecone(api_key=PINECONE_KEY)
+index = pc.Index("property-docs")
+co = cohere.Client(COHERE_KEY)
+
+@traceable(name="rag-retrieve-and-generate")
+async def rag_query(query: str, top_k: int = 5):
+    # 1. Generate query embedding with Cohere
+    embedding = co.embed(
+        texts=[query], model="embed-english-v3.0",
+        input_type="search_query"
+    ).embeddings[0]
+    
+    # 2. Retrieve relevant chunks from Pinecone
+    results = index.query(
+        vector=embedding, top_k=top_k,
+        include_metadata=True
+    )
+    context = "\\n".join([m.metadata["text"] for m in results.matches])
+    
+    # 3. Grounded LLM completion (traced by LangSmith)
+    response = await llm.ainvoke(
+        f"Context:\\n{context}\\n\\nQuestion: {query}"
+    )
+    return {"answer": response, "sources": results.matches}`
+    }
+  },
+  {
+    title: "AI Property Intelligence with pgvector RAG",
+    impact: "Sub-second Property Insights with Vector Search",
+    badge: "Python, FastAPI & pgvector",
+    description: "Created a production AI-powered property intelligence service using pgvector for semantic retrieval, with LangGraph agentic workflows for multi-step property management operations and automated Pytest testing.",
+    features: [
+      "pgvector similarity indexing for semantic retrieval of property clauses and amenities",
+      "LangGraph agentic workflows with stateful agents and conditional routing for property operations",
+      "Prompt optimization evaluating retrieval relevance and mitigating LLM hallucinations",
+      "Automated testing with Pytest ensuring reliable multi-step property management workflows"
+    ],
+    tech: ["Python", "FastAPI", "pgvector", "PostgreSQL", "LangGraph", "Pytest"],
+    codeSnippet: {
+      lang: "python",
+      filename: "property_rag_service.py",
+      code: `@router.post("/properties/{property_id}/summarize")
+async def summarize_property(property_id: str, query: SummarizeRequest, db: AsyncSession = Depends(get_db)):
+    # 1. Compute embedding vector for input query context
+    query_embedding = await get_embedding(query.prompt or "Highlight key terms, pricing, and amenities")
+    
+    # 2. Vector search via pgvector cosine distance index (<=>)
+    stmt = select(PropertyChunk.content)\\
+        .where(PropertyChunk.property_id == property_id)\\
+        .order_by(PropertyChunk.embedding.cosine_distance(query_embedding))\\
+        .limit(5)
+    chunks = (await db.execute(stmt)).scalars().all()
+    
+    # 3. Grounded LLM completion with system prompt guardrails
+    summary = await call_llm(context="\\n".join(chunks), prompt=query.prompt)
+    return {"property_id": property_id, "summary": summary}`
     }
   }
 ];
-

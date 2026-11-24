@@ -51,7 +51,7 @@ export default function Navbar({ darkMode, setDarkMode, onOpenResume, onOpenCont
                 {personalInfo.name}
               </span>
               <span className="text-[10px] text-neutral-500 dark:text-neutral-400 font-normal hidden sm:inline">
-                Senior Engineer • Toronto
+                AI Engineer • Toronto
               </span>
             </div>
           </a>

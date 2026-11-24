@@ -52,7 +52,7 @@ export default function ContactModal({ isOpen, onClose }) {
             Connect with {personalInfo.name}
           </h3>
           <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 mt-1">
-            Open for Senior Backend, Distributed Systems, and AI roles in Toronto or Remote.
+            Open for AI Engineering, Full Stack, and Backend roles in Toronto or Remote.
           </p>
         </div>
 

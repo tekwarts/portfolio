@@ -18,7 +18,7 @@ export default function Footer({ onOpenResume, onOpenContact }) {
               {personalInfo.name}
             </div>
             <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
-              Senior Software Engineer • Distributed Systems, Kafka & AI Backend
+              AI Full Stack Engineer • AI Systems, RAG Pipelines & Scalable Backends
             </p>
           </div>
 

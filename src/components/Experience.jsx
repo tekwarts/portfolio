@@ -41,7 +41,7 @@ export default function Experience() {
               Experience
             </h2>
             <p className="mt-2 text-sm sm:text-base text-neutral-500 dark:text-neutral-400 max-w-xl">
-              5 years of continuous engineering evolution at Ruiting Tech, architecting high-throughput distributed systems and cloud backends.
+              5+ years building production AI systems, agentic workflows, and scalable backend services across TaskUp and Ruiting Tech.
             </p>
           </div>
 
@@ -61,8 +61,9 @@ export default function Experience() {
         {/* Apple-style Segmented Control */}
         <div className="flex items-center gap-1.5 p-1 rounded-full liquid-glass-subtle w-fit mb-8 overflow-x-auto max-w-full">
           {[
-            { id: 'all', label: 'All Roles (3)' },
-            { id: 'sr-swe', label: 'Senior SWE' },
+            { id: 'all', label: 'All Roles (4)' },
+            { id: 'ai-fse', label: 'AI FSE (Contract)' },
+            { id: 'ai-eng', label: 'AI Engineer' },
             { id: 'swe-2', label: 'SWE II' },
             { id: 'swe-1', label: 'SWE I' },
           ].map((tab) => (

@@ -37,7 +37,7 @@ export default function ArchitectureShowcase() {
         </div>
 
         {/* Apple Segmented Control System Tabs */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 mb-6">
           {architectureShowcases.map((system, idx) => {
             const isActive = activeTab === idx;
             return (
@@ -159,7 +159,23 @@ export default function ArchitectureShowcase() {
               {/* Dataflow View */}
               {viewMode === 'flow' && (
                 <div className="space-y-3">
-                  {activeTab === 0 && (
+                  {current.flow && current.flow.map((step, index) => (
+                    <React.Fragment key={step.title}>
+                      {index > 0 && (
+                        <div className="flex justify-center text-neutral-400 dark:text-neutral-600">
+                          <ArrowRight className="w-3.5 h-3.5 rotate-90" />
+                        </div>
+                      )}
+                      <div className="p-3.5 rounded-xl liquid-glass text-xs">
+                        <div className="font-semibold text-neutral-900 dark:text-white flex items-center justify-between gap-2">
+                          <span>{step.title}</span>
+                          <span className="text-[10px] text-neutral-400 font-mono">{step.label}</span>
+                        </div>
+                        <p className="text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed">{step.description}</p>
+                      </div>
+                    </React.Fragment>
+                  ))}
+                  {!current.flow && activeTab === 2 && (
                     <div className="space-y-2.5 text-xs">
                       <div className="p-3.5 rounded-xl liquid-glass">
                         <div className="font-semibold text-neutral-900 dark:text-white flex items-center justify-between">
@@ -201,7 +217,7 @@ export default function ArchitectureShowcase() {
                     </div>
                   )}
 
-                  {activeTab === 1 && (
+                  {!current.flow && activeTab === 3 && (
                     <div className="space-y-2.5 text-xs">
                       <div className="p-3.5 rounded-xl liquid-glass">
                         <div className="font-semibold text-neutral-900 dark:text-white flex items-center justify-between">
@@ -243,7 +259,7 @@ export default function ArchitectureShowcase() {
                     </div>
                   )}
 
-                  {activeTab === 2 && (
+                  {!current.flow && activeTab === 4 && (
                     <div className="space-y-2.5 text-xs">
                       <div className="p-3.5 rounded-xl liquid-glass">
                         <div className="font-semibold text-neutral-900 dark:text-white flex items-center justify-between">
